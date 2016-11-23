@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!-- Reference: http://henningpetersen.com/post/15/mandatory-documentation-is-a-pest -->
+
+<module name="Checker">
+    <property name="severity" value="warning" />
+    <module name="TreeWalker">
+        <module name="FileContentsHolder" />
+        <module name="JavadocStyle" />
+
+        <module name="ConstantName">
+            <property name="format"
+                value="^([A-Z][A-Z0-9]*(_[A-Z0-9]+)*|logger)$" />
+        </module>
+        <module name="LocalFinalVariableName" />
+        <module name="LocalVariableName" />
+        <module name="MemberName" />
+        <module name="MethodName" />
+        <module name="PackageName" />
+        <module name="ParameterName" />
+        <module name="StaticVariableName" />
+        <module name="TypeName" />
+        <module name="AvoidStarImport" />
+        <module name="IllegalImport" />
+        <module name="RedundantImport" />
+        <module name="UnusedImports" />
+
+        <module name="MethodLength">
+            <property name="max" value="90" />
+        </module>
+        <module name="ParameterNumber" />
+        <module name="LineLength">
+            <property name="max" value="200" />
+        </module>
+        <module name="EmptyForIteratorPad" />
+        <module name="MethodParamPad" />
+        <module name="NoWhitespaceAfter" />
+        <module name="NoWhitespaceBefore" />
+        <module name="OperatorWrap">
+            <property name="tokens"
+                value="BAND,BOR,BSR,BXOR,COLON,DIV,EQUAL,GE,GT,LAND,LE,LITERAL_INSTANCEOF,LOR,LT,MINUS,MOD,NOT_EQUAL,QUESTION,SL,SR,STAR" />
+        </module>
+        <module name="ParenPad" />
+        <module name="TypecastParenPad" />
+        <module name="WhitespaceAfter" />
+
+        <!-- Also barks at things that are not methods at all, e.g. annotation 
+            values that are arrays. -->
+        <!--<module name="WhitespaceAround"/> -->
+
+        <module name="ModifierOrder" />
+        <module name="RedundantModifier" />
+        <module name="AvoidNestedBlocks" />
+        <module name="EmptyBlock" />
+        <module name="LeftCurly" />
+        <module name="NeedBraces" />
+        <module name="RightCurly" />
+        <module name="EmptyStatement" />
+        <module name="EqualsHashCode" />
+        <module name="HiddenField">
+            <property name="ignoreConstructorParameter" value="true" />
+            <property name="ignoreSetter" value="true" />
+            <property name="ignoreAbstractMethods" value="true" />
+            <property name="tokens" value="VARIABLE_DEF" />
+        </module>
+        <module name="IllegalInstantiation" />
+        <module name="InnerAssignment" />
+        <module name="MagicNumber">
+            <!-- Unless ignoreHashCodeMethod is enabled, this check disallows 
+                most standard hashCode() implementations. -->
+            <property name="ignoreHashCodeMethod" value="true" />
+            <!-- Unless disabled, this check disallows standard use of e.g. 
+                the length property in JPA annotations. Sometimes, the meaning of the number 
+                31 is 31: @Column(length = 31). -->
+            <property name="ignoreAnnotation" value="true" />
+            <property name="ignoreNumbers" value="-1, 0, 1, 2, 1000" />
+        </module>
+        <module name="MissingSwitchDefault" />
+        <module name="RedundantThrows">
+            <property name="suppressLoadErrors" value="true" />
+        </module>
+        <module name="SimplifyBooleanExpression" />
+        <module name="SimplifyBooleanReturn" />
+        <module name="FinalClass" />
+        <module name="HideUtilityClassConstructor" />
+        <module name="InterfaceIsType" />
+        <module name="VisibilityModifier">
+            <property name="protectedAllowed" value="true" />
+        </module>
+        <module name="ArrayTypeStyle" />
+        <module name="FinalParameters" />
+        <module name="UpperEll" /> <!-- Long literals with upper case L, i.e. 43L. -->
+        <module name="CyclomaticComplexity" />
+        <module name="BooleanExpressionComplexity" />
+        <module name="ClassDataAbstractionCoupling" />
+        <module name="ClassFanOutComplexity" />
+        <module name="NPathComplexity" />
+        <module name="AnnotationUseStyle">
+            <property name="elementStyle" value="compact" />
+        </module>
+        <module name="MissingDeprecated" />
+        <module name="DefaultComesLast" />
+        <module name="DeclarationOrder" />
+
+        <!-- Under rare circumstances, this enforces Yoda conditions with 
+            nullable strings, e.g. "mystring".equals(possiblyNullString). -->
+        <module name="EqualsAvoidNull" />
+
+        <module name="FallThrough" />
+        <module name="IllegalCatch" />
+        <module name="IllegalThrows" />
+        <module name="IllegalToken">
+            <property name="severity" value="ignore" />
+            <property name="tokens" value="POST_INC,POST_DEC,LITERAL_SWITCH" />
+            <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity"
+                value="inherit" />
+        </module>
+        <module name="IllegalType">
+            <property name="tokens"
+                value="METHOD_DEF,PARAMETER_DEF,VARIABLE_DEF" />
+        </module>
+        <module name="JUnitTestCase" />
+        <module name="MultipleVariableDeclarations" />
+        <module name="NoFinalizer" />
+        <module name="SuperClone" />
+
+        <!-- Only catches very basic mistakes, does not know operator precedence, 
+            and is therefore not as bad an idea as it first sounds. -->
+        <module name="UnnecessaryParentheses" />
+
+        <module name="OneStatementPerLine" />
+    </module>
+    <module name="NewlineAtEndOfFile">
+        <property name="lineSeparator" value="lf" />
+    </module>
+    <module name="Translation" />
+    <module name="FileLength">
+        <property name="max" value="800" />
+    </module>
+    <module name="FileTabCharacter" />
+    <module name="StrictDuplicateCode">
+        <property name="min" value="25" />
+        <property name="fileExtensions" value="java" />
+    </module>
+    <module name="SuppressionCommentFilter">
+        <property name="offCommentFormat" value="CHECKSTYLE.OFF\: ([\w\|]+)" />
+        <property name="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)" />
+        <property name="checkFormat" value="$1" />
+    </module>
+</module>

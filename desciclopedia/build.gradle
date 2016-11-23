@@ -1,0 +1,11 @@
+group "br.com.mymusic"
+version "1.0.0"
+
+ext {
+
+}
+
+dependencies {
+
+}
+

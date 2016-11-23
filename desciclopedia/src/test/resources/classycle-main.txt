@@ -1,0 +1,4 @@
+show allResults
+
+{package} = br.com.desciclopedia
+check absenceOfPackageCycles > 1 in ${package}.*
