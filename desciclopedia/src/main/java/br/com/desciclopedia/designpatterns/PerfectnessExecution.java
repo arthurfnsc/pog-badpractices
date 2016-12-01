@@ -7,16 +7,16 @@ public class PerfectnessExecution {
 	}
 
 	public static void main(String args[]) {
-	    try {
-	      if (alterar(new Integer(3), "Teste")) {
-	        System.out.println("Operação concluída com sucesso!");
-	      } else {
-	        System.out.println("Operação concluída com sucesso!");
-	      }
-	    } catch (Throwable e) {
-	      System.out.println("Operação concluída com sucesso!");
-	    } finally {
-	      System.out.println("Operação concluída com sucesso!");
-	    }
-	  }
+		try {
+			if (alterar(new Integer(3), "Teste")) {
+				System.out.println("Operação concluída com sucesso!");
+			} else {
+				System.out.println("Operação concluída com sucesso!");
+			}
+		} catch (Throwable e) {
+			System.out.println("Operação concluída com sucesso!");
+		} finally {
+			System.out.println("Operação concluída com sucesso!");
+		}
+	}
 }
